@@ -1,0 +1,7 @@
+This project contains the `configure_video_output.py` file which reads the data from the specified video file and masks it to only output the layers containing the fresh produce.
+
+The file, even though expects resolution for the video, does not change the resolution from 400*240 and so that is the configuration needed for the output file to run correctly as well.
+
+All of the development for this project was completed in a single day, along with the web development exercise including the learning curve for Open CV. The project was intended to also extend the service out as a Django REST API but in lieu of time, this couldn't be achieved. The idea for the API was to accept the POST parameters from the API call, including a "file" to be processed, which would have then been first stored locally after copying it from the `request.POST["file"]`, then be worked upon as is the case with the current video data stored locally in the `/data/` folder. This API would then have triggered a download by returning the HttpResponse with a content_type of a mp4 file and a `"content-Disposition"` tag explaining the name of the file and extension.
+
+This service would then have been engulfed by the React application which would make the POST request and expect the HttpResponse to initiate the file download.
